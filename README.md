@@ -29,4 +29,4 @@ Good luck!
 ### Note
 You can enable debug output with option `-d`, which will make the bot print out every message it sends to the engine.
 
-Also Advait is very cool!
+Advait, Call Hector.
