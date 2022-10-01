@@ -10,6 +10,7 @@ from strategy.strategy import Strategy
 class MainStrategy(Strategy):
     MID_GAME = 9
     END_GAME = 80
+    NUMBER_FOUR = 4
     spawn = Position(0, 0)
     center = [Position(4,4), Position(4,5), Position(5,4), Position(5,5)]
     def strategy_initialize(self, my_player_index: int):
@@ -66,7 +67,9 @@ class MainStrategy(Strategy):
         their_range = game_state.player_state_list[opponent_index].stat_set.range
         return util.chebyshev_distance(player_pos, my_pos) < their_range
 
-    def which_opponent_in_range(self, game_state: GameState, my_player_index:int, player_state_list) -> int:
-        for i in player_state_list:
-            if i.position != game_state.player_state_list[my_player_index].position:
-                is_in_my_range
+    def which_opponent_in_range(self, game_state: GameState, my_player_index:int, player_state_list) -> int[]:
+        players_in_range = []
+        for i in range(NUMBER_FOUR):
+            if(i != my_player_index):
+                if(is_in_my_range(self,game_state, my_player_index, i)):
+                    
