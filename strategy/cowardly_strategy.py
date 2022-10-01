@@ -36,5 +36,15 @@ class StarterStrategy(Strategy):
         their_range = game_state.player_state_list[opponent_index].stat_set.range
         return util.chebyshev_distance(player_pos, my_pos) < their_range
 
+    def rotatePosCounterClockwise(self, my_player_index: int, pos: Position) -> Position:
+        new_pos = pos
+        for i in range(my_player_index):
+            new_pos = Position(new_pos.y, 9 - new_pos.x)
+        return new_pos
+
     def rotatePosClockwise(self, my_player_index: int, pos: Position) -> Position:
-        pass
+        new_pos = pos
+        for i in range(my_player_index):
+            new_pos = Position(9 - new_pos.y, new_pos.x)
+        return new_pos
+        
